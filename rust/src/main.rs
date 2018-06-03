@@ -39,7 +39,8 @@ fn main() {
                         .a(extra_item);
                 })
     })
-    .workers(64)
+    .backlog(4096)
+    .workers(16)
     .bind("127.0.0.1:8080").unwrap()
     .start();
 
