@@ -13,23 +13,27 @@ The purpose of this test is to get a rough idea about the performance difference
 
 Note: `ab` is not a good choice, because 1) default to use `HTTP/1.0`, 2) [only use one thread regardless the concurrency](https://en.wikipedia.org/wiki/ApacheBench) which itself will become a bottleneck.
 
+## Environment
+
+MacBook Pro: 3.1G i7 Processor, 16G 2133 MHZ Memory.
+
 ## Build
 
 ### rust
 
-```
+```bash
 cargo build --release
 ```
 
 ### Java
 
-```
+```bash
 mvn clean package
 ```
 
 ### Node
 
-```
+```bash
 npm install
 ```
 
@@ -45,8 +49,8 @@ I tuned the `threads` and `connections`, and picked up the highest throughput re
 
 |Language|Threads|Connections|Requests/Sec|Transfer/Sec|CPU%|Mem|
 |----|----|----|----|----|----|----|
-|Node|4|200|**33030.43**|7.47MB|~400%|~240Mb|
-|Java|8|60|**38787.85**|4.92MB|~600%|~880Mb|
-|Rust|8|60|**74511.95**|9.45MB|~300%|~30Mb|
+|Node|4|200|33,030.43|7.47MB|~400%|~240Mb|
+|Java|8|60|38,787.85|4.92MB|**~600%**|**~880Mb**|
+|Rust|8|60|**74,511.95**|9.45MB|~300%|~30Mb|
 
-From the above comparison, do you feel `Java` is so lame like me did? It consumed almost 30 times memory and 2 times CPU usage, and produced only **half** throughput comparing to `Rust`.
+From the above comparison, do you feel `Java` is so lame like I do? It consumed almost 30 times memory and 2 times CPU usage, and produced only **half** throughput comparing to `Rust`.
