@@ -1,0 +1,12 @@
+logging:
+  level: ERROR
+  loggers:
+    leo.me: ERROR
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+      bindHost: 127.0.0.1 # only bind to loopback
+      #acceptorThreads: 4
+      #selectorThreads: 8
+      #acceptQueueSize: 1024
