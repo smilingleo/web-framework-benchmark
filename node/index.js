@@ -6,7 +6,7 @@ cluster((worker) => {
     var app = express();
     app.use(bodyParser.json());
 
-    app.post("/extractor", (req, res) => {
+    app.post("/json-data", (req, res) => {
         res.send(req.body);
     });
 

@@ -34,7 +34,7 @@ fn main() {
 
     server::new(||{
             App::new()
-                .resource("/extractor", |r| {
+                .resource("/json-data", |r| {
                     r.method(http::Method::POST)
                         .a(extra_item);
                 })

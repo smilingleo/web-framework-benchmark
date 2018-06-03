@@ -18,7 +18,6 @@ public class JsonTestApplication extends Application<JsonTestConfiguration> {
 
     @Override
     public void initialize(final Bootstrap<JsonTestConfiguration> bootstrap) {
-        // TODO: application initialization
     }
 
     @Override

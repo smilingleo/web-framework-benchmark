@@ -7,7 +7,7 @@ import javax.ws.rs.core.MediaType;
 
 import leo.me.api.Data;
 
-@Path("/extractor")
+@Path("/json-data")
 @Produces(MediaType.APPLICATION_JSON)
 public class DataResource {
 
