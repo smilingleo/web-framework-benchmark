@@ -7,11 +7,25 @@ The purpose of this test is to get a rough idea about the performance difference
     Note: Because `node` is single-threaded, to have a reasonable comparison, I use `express-cluster` to have 4 workers.
 * Rust (actix-web)
 
+The test case is really simple, implement the following API with each framework.
+
+```bash
+curl -i -X POST \
+    -H "content-type: application/json" \
+    localhost:8080/json-data \
+    -d '{ "name": "leo", "number": 1}'
+
+# expect it returns the same JSON object:
+{ "name": "leo", "number": 1}
+```
+
+No database access, no network I/O, just the simple JSON serialization/deserialization.
+
 ## Tools
 
 * [wrk](https://github.com/wg/wrk)
 
-Note: `ab` is not a good choice, because 1) default to use `HTTP/1.0`, 2) [only use one thread regardless the concurrency](https://en.wikipedia.org/wiki/ApacheBench) which itself will become a bottleneck.
+Note: Apache Benchmark, aka, `ab`, is not a good choice, because 1) default to use `HTTP/1.0`, 2) [only use one thread regardless the concurrency](https://en.wikipedia.org/wiki/ApacheBench) which itself will become a bottleneck.
 
 ## Environment
 
