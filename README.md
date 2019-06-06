@@ -84,10 +84,12 @@ I tuned the `threads` and `connections`, and picked up the highest throughput re
 |----|----|----|----|----|----|----|
 |Node|4|100|32744.43|7.40MB|~400%|~240Mb|
 |Java|8|60|46305.79|4.98MB|**~600%**|**~880Mb**|
-|Rust|4|60|75168.54|9.53MB|~300%|~30Mb|
-|Go|4|100|**86007.14**|12.55MB|~380%|~9Mb|
+|Rust|8|100|**92302.64**|11.71MB|~300%|~30Mb|
+|Go|4|100|90934.44|13.27MB|~380%|~9Mb|
 |Python|4|100|**512.77**|89.76Kb|~95%|~25Mb|
 
 **TODO:** I run python with `flask run` which is not recommended in production, will use Nginx later.
 
 From the above comparison, do you feel `Java` is so lame like I do? It consumed almost 30 times memory and 2 times CPU usage, and produced only **half** throughput comparing to `Rust`.
+
+If you are interested in more web framework benchmarking, go check [this](https://www.techempower.com/benchmarks/) out.
